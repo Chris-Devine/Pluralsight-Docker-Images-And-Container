@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    generator:
+        build:
+            context: .
+            dockerfile: Dockerfile
+    
+        image: lildevine89/generator:multi
+        ports:
+          - "8080:80"
+          - "1025:1025"
+    mail:
+        image: mailhog/mailhog
+        ports: 
+            - "8025:8025"
+        
